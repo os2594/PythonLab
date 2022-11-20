@@ -1,12 +1,11 @@
 class Account:
     """
-    A class representing details for a person's account
+    A class representing details for an account object
     """
-    def __init__(self, account_name: str):
+    def __init__(self, account_name: str) -> None:
         """
-        Constructor to create initial state of account
-        :param account_name: Name under the account
-        :param account_balance: Account balance
+        Constructor to create initial state of an account object
+        :param account_name: Name on the account
         """
         self.__account_name = account_name
         self.__account_balance = 0
@@ -14,8 +13,9 @@ class Account:
 
     def deposit(self, amount: float) -> bool:
         """
+        Method to deposit money
         :param amount: amount of the intended deposit
-        :return: return either successful or not successful transaction
+        :return: True or false to represent either a successful or not successful transaction
         """
 
         if amount <= 0:
@@ -27,8 +27,9 @@ class Account:
     def withdraw(self, amount: float) -> bool:
 
         """
-        :param amount: amount of the intended withdraw
-        :return: return either successful or not successful transaction
+        Method to withdraw money
+        :param amount: amount of the intended withdrawal
+        :return: True or false to represent either a successful or not successful withdrawal
         """
 
         if amount <= 0 or amount > self.__account_balance:
@@ -39,12 +40,14 @@ class Account:
 
     def get_balance(self) -> float:
         """
-        :return: return account balance
+        Method to access the balance on the account
+        :return:  Balance on the account
         """
         return self.__account_balance
 
     def get_name(self) -> str:
         """
-        :return: return the name under the account
+        Method to access the name on the account
+        :return: Name on the account
         """
         return self.__account_name
